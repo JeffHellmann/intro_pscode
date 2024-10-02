@@ -1,4 +1,26 @@
 # Client Task C #
 # Add your pseudocode to this file below this line: #
 # ------------------------------------------------- #
+START
+
+  // Initialize the number of products per scan
+  SET products_per_scan = 2
+
+  // Initialize the maximum number of packages in a case
+  SET max_packages = 50
+
+  // Initialize current number of packages scanned
+  SET scanned_packages = 0
+
+  // Loop to count the number of packages scanned
+  WHILE scanned_packages < max_packages DO
+    // Increment the count of scanned packages by 2
+    scanned_packages = scanned_packages + products_per_scan
+
+    // Print the current number of scanned packages
+    PRINT scanned_packages
+
+  END WHILE
+
+END
 
