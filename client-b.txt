@@ -1,4 +1,59 @@
 # Client Task B #
 # Add your pseudocode to this file below this line: #
 # ------------------------------------------------- #
+START
+
+  // Initialize warehouse dimensions (rows and columns)
+  SET warehouse_rows = X  // Total rows in the warehouse
+  SET warehouse_cols = Y  // Total columns in the warehouse
+
+  // Initialize the customer’s starting position
+  SET customer_position = (start_row, start_col)
+
+  // Set the target location
+  SET target_position = (target_row, target_col)
+
+  PRINT "Your current position is " + customer_position
+  PRINT "Target location is " + target_position
+
+  // Loop until the customer reaches the target location
+  WHILE customer_position != target_position DO
+    // Display available directions based on current position
+    IF customer_position.row > 0 THEN
+      PRINT "You can move North"
+    IF customer_position.row < warehouse_rows THEN
+      PRINT "You can move South"
+    IF customer_position.col > 0 THEN
+      PRINT "You can move West"
+    IF customer_position.col < warehouse_cols THEN
+      PRINT "You can move East"
+
+    PROMPT customer to input direction (North, South, East, West)
+    SET direction = customer input
+
+    // Update customer’s position based on direction
+    IF direction == "North" AND customer_position.row > 0 THEN
+      DECREMENT customer_position.row by 1
+
+    ELSE IF direction == "South" AND customer_position.row < warehouse_rows THEN
+      INCREMENT customer_position.row by 1
+
+    ELSE IF direction == "West" AND customer_position.col > 0 THEN
+      DECREMENT customer_position.col by 1
+
+    ELSE IF direction == "East" AND customer_position.col < warehouse_cols THEN
+      INCREMENT customer_position.col by 1
+
+    ELSE
+      PRINT "Invalid direction or out of bounds!"
+
+    // Display updated position
+    PRINT "Your new position is " + customer_position
+
+  END WHILE
+
+  // Once customer reaches target
+  PRINT "Congratulations! You have reached the target location."
+
+END
 

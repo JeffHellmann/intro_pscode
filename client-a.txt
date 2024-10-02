@@ -1,4 +1,31 @@
 # Client Task A #
 # Add your pseudocode to this file below this line: #
 # ------------------------------------------------- #
+START
+
+  // Initialize variables
+  SET chances = 3
+  SET random_number = GENERATE random number between 1 and 10
+  
+  // Loop until the player runs out of chances
+  WHILE chances > 0 DO
+    PRINT "You have " + chances + " chances left."
+    PROMPT user to input a guess
+    SET guess = user's input
+
+    // Check if the guess is correct
+    IF guess == random_number THEN
+      PRINT "Congratulations! You guessed the number correctly."
+      BREAK  // End the game if the guess is correct
+
+    // Give feedback if the guess is incorrect
+    ELSE
+      PRINT "Wrong guess!"
+      DECREMENT chances by 1
+
+  // If the player runs out of chances
+  IF chances == 0 THEN
+    PRINT "Game over! The correct number was " + random_number
+
+END
 
